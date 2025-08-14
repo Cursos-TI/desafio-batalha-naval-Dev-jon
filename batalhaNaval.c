@@ -117,4 +117,28 @@ int main() {
     printf("=== BATALHA NAVAL - TABULEIRO 10x10 ===\n");
     printf("=== 0: Água | 3: Navio ===\n");
 
+    // Posiciona 4 navios:
+
+
+    // 1. Navio horizontal de tamanho 4
+
+    printf("\nPosicionando navio horizontal (tamanho 4) em (2,3)...\n");
+    posicionarHorizontal(tabuleiro, 2, 3, 4);
     
+    
+    // 2. Navio vertical de tamanho 3
+    printf("Posicionando navio vertical (tamanho 3) em (5,7)...\n");
+    posicionarVertical(tabuleiro, 5, 7, 3);
+    
+    
+    // 3. Navio diagonal de tamanho 3
+    printf("Posicionando navio diagonal (tamanho 3) em (0,0)...\n");
+    posicionarDiagonal(tabuleiro, 0, 0, 3);
+    
+    
+    // 4. Navio diagonal de tamanho 5
+    printf("Posicionando navio diagonal (tamanho 5) em (1,2)...\n");
+    posicionarDiagonal(tabuleiro, 1, 2, 5);
+    
+    
+      
