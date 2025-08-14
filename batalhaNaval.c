@@ -13,6 +13,7 @@ void inicializarTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
 }
 
 // Função para exibir 
+
 void exibirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
     printf("\n   ");
     for (int j = 0; j < TAMANHO; j++) {
@@ -28,3 +29,31 @@ void exibirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
         printf("\n");
     }
 }
+
+// Posicionar navio horizontal
+
+bool posicionarHorizontal(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int tamanho) {
+    // Verifica se o navio cabe na posição
+    if (coluna + tamanho > TAMANHO) {
+        printf("Erro: Navio horizontal não cabe nesta posição!\n");
+        return false;
+    }
+// Verifica se as posições estão livres
+
+
+    for (int j = coluna; j < coluna + tamanho; j++) {
+        if (tabuleiro[linha][j] != 0) {
+            printf("Erro: Posição (%d,%d) já ocupada!\n", linha, j);
+            return false;
+        }
+    }
+    
+    // Posiciona o navio 
+
+    
+    for (int j = coluna; j < coluna + tamanho; j++) {
+        tabuleiro[linha][j] = 3;
+    }
+    
+    return true;
+}    
