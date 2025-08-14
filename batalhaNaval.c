@@ -11,3 +11,20 @@ void inicializarTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
         }
     }
 }
+
+// Função para exibir 
+void exibirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
+    printf("\n   ");
+    for (int j = 0; j < TAMANHO; j++) {
+        printf("%2d ", j); // Cabeçalho das colunas (0-9)
+    }
+    printf("\n");
+    
+    for (int i = 0; i < TAMANHO; i++) {
+        printf("%2d ", i); // Número da linha (0-9)
+        for (int j = 0; j < TAMANHO; j++) {
+            printf("%2d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+}
