@@ -81,3 +81,40 @@ bool posicionarVertical(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, 
     
     return true;
 }
+
+
+
+// Posicionar navio diagonal (direita para baixo)
+bool posicionarDiagonal(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int tamanho) {
+    // Verifica se o navio cabe na posição
+    if (linha + tamanho > TAMANHO || coluna + tamanho > TAMANHO) {
+        printf("Erro: Navio diagonal não cabe nesta posição!\n");
+        return false;
+    }
+    
+    // Verifica se as posições estão livres
+    for (int i = 0; i < tamanho; i++) {
+        if (tabuleiro[linha + i][coluna + i] != 0) {
+            printf("Erro: Posição (%d,%d) já ocupada!\n", linha + i, coluna + i);
+            return false;
+        }
+    }
+    
+    // Posiciona o navio
+    for (int i = 0; i < tamanho; i++) {
+        tabuleiro[linha + i][coluna + i] = 3;
+    }
+    
+    return true;
+}
+
+int main() {
+    int tabuleiro[TAMANHO][TAMANHO];
+    
+    // Inicializa o tabuleiro com água (0)
+    inicializarTabuleiro(tabuleiro);
+    
+    printf("=== BATALHA NAVAL - TABULEIRO 10x10 ===\n");
+    printf("=== 0: Água | 3: Navio ===\n");
+
+    
