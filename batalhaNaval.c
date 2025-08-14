@@ -141,4 +141,9 @@ int main() {
     posicionarDiagonal(tabuleiro, 1, 2, 5);
     
     
-      
+       // Exibir completamente
+    printf("\nTabuleiro completo:\n");
+    exibirTabuleiro(tabuleiro);
+    
+    return 0;
+} 
