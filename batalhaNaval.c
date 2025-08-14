@@ -3,7 +3,8 @@
 
 #define TAMANHO 10
 
-// Função para inicializar o tabuleiro com 0s (água)
+// Função para inicializar 
+
 void inicializarTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
     for (int i = 0; i < TAMANHO; i++) {
         for (int j = 0; j < TAMANHO; j++) {
@@ -38,9 +39,8 @@ bool posicionarHorizontal(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna
         printf("Erro: Navio horizontal não cabe nesta posição!\n");
         return false;
     }
-// Verifica se as posições estão livres
-
-
+    
+    // Verifica se as posições estão livres
     for (int j = coluna; j < coluna + tamanho; j++) {
         if (tabuleiro[linha][j] != 0) {
             printf("Erro: Posição (%d,%d) já ocupada!\n", linha, j);
@@ -48,12 +48,36 @@ bool posicionarHorizontal(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna
         }
     }
     
-    // Posiciona o navio 
+    // Posiciona o navio (valor 3 para posições ocupadas)
 
-    
     for (int j = coluna; j < coluna + tamanho; j++) {
         tabuleiro[linha][j] = 3;
     }
     
     return true;
-}    
+}
+
+// Posicionar navio vertical
+
+bool posicionarVertical(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int tamanho) {
+    
+    if (linha + tamanho > TAMANHO) {
+        printf("Erro: Navio vertical não cabe nesta posição!\n");
+        return false;
+    }
+    
+    
+    for (int i = linha; i < linha + tamanho; i++) {
+        if (tabuleiro[i][coluna] != 0) {
+            printf("Erro: Posição (%d,%d) já ocupada!\n", i, coluna);
+            return false;
+        }
+    }
+    
+    
+    for (int i = linha; i < linha + tamanho; i++) {
+        tabuleiro[i][coluna] = 3;
+    }
+    
+    return true;
+}
